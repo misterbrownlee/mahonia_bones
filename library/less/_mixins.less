@@ -59,10 +59,10 @@ http://0to255.com/
 @black:             #000;
 @white:             #fff;
 
-@bones-pink:        #f01d4f;
+@primary-accent-color:  rgb(63, 115, 85);
 @bones-blue:        #1990db;
 
-@link-color:        @bones-pink;
+@link-color:        @primary-accent-color;
 @link-hover:        darken(@link-color, 9%);
 
 /*
@@ -215,9 +215,9 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	border: 1px solid darken(@bones-pink, 13%);
-	border-top-color: darken(@bones-pink, 7%);
-	border-left-color: darken(@bones-pink, 7%);
+	border: 1px solid darken(@primary-accent-color, 13%);
+	border-top-color: darken(@primary-accent-color, 7%);
+	border-left-color: darken(@primary-accent-color, 7%);
 	padding: 4px 12px;
 	color: @white;
 	display: inline-block;
@@ -230,18 +230,18 @@ BUTTONS
 	line-height: 21px;
 	.transition();
 	.border-radius(4px);
-	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
+	.css-gradient(@primary-accent-color,darken(@primary-accent-color, 5%));
 
 	&:hover, &:focus {
 		color: @white;
-	  border: 1px solid darken(@bones-pink, 13%);
-	  border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
+	  border: 1px solid darken(@primary-accent-color, 13%);
+	  border-top-color: darken(@primary-accent-color, 20%);
+	 	border-left-color: darken(@primary-accent-color, 20%);
+		.css-gradient(darken(@primary-accent-color, 5%),darken(@primary-accent-color, 10%));
 	}
 	
 	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
+		.css-gradient(darken(@primary-accent-color, 5%),@primary-accent-color);
 	}	
 }
 
