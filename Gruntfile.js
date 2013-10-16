@@ -11,12 +11,14 @@ module.exports = function(grunt) {
     dirs: dirs,
 
     less: {
-      development: {
+      // use this without cssmin in development
+      // and you'll be able to make more sense of the CSS
+      style: {
         options: {
           paths: ["library/less"]
         },
         files: {
-          "library/css/style.full.css": "library/less/style.less"
+          "library/css/style.css": "library/less/style.less"
         }
       }
     },
@@ -24,7 +26,7 @@ module.exports = function(grunt) {
     cssmin: {
       style: {
         files: [{
-          "library/css/style.css": "library/css/style.full.css"
+          "library/css/style.css": "library/css/style.css"
         }]
       }
     },
@@ -42,7 +44,7 @@ module.exports = function(grunt) {
     
     watch: {
       files: ['library/less/*.less'],
-      tasks: ['less', 'cssmin', 'copy']
+      tasks: ['less', 'copy']
     }
   });
 
@@ -51,7 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['less', 'cssmin']);
 
 };
 
